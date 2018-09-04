@@ -1,0 +1,16 @@
+{
+  "name": "koa-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-basic-auth": "^3.0.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
