@@ -2,25 +2,20 @@ const route = require('koa-route');
 const Koa = require('koa');
 const bodyparser = require('koa-bodyparser');
 const auth = require('koa-basic-auth');
-const react = require('koa-react-view');
 const staticCache = require('koa-static-cache');
+const send = require('koa-send');
 const path = require('path');
 const register = require('babel-register');
 const app = new Koa();
 
 // imports babel runtime for JSX views, warning: live transpiling
 // best to precompile in production deploys for perf + reliability
-register({
-  presets: [ 'es2015', 'react' ],
-  extensions: [ '.jsx', '.js' ],
-});
+// register({
+//   presets: [ 'es2015', 'react' ],
+//   extensions: [ '.jsx', '.js' ],
+// });
 
-const viewpath = path.join(__dirname, 'views');
-const assetspath = path.join(__dirname, 'public');
-
-react(app, {
-  views: viewpath
-});
+const assetspath = path.join(__dirname, 'out');
 
 app.use(staticCache(assetspath));
 
@@ -60,10 +55,8 @@ app.use(route.get('/pets', pets.list));
 app.use(route.get('/pets/:name', pets.show));
 app.use(route.post('/pets', pets.add))
 
-app.use(function* () {
-  this.render('index', {
-    title: 'Counter'
-  });
+app.use(function* index() {
+  yield send(this, '/public/index.html');
 });
 
 app.listen(3000);

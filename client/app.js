@@ -11,7 +11,6 @@ class App extends React.Component {
   }
 
   increment() {
-    console.log('here')
     const count = this.state.count + 1;
     this.setState({
       count 
@@ -28,9 +27,6 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        {
-          this.props.title
-        }
         {
           this.state.count
         }
