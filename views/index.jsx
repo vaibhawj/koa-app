@@ -16,6 +16,7 @@ class index extends React.Component {
         <div id="content" dangerouslySetInnerHTML={{__html: contentString}}>
         </div>
         <script dangerouslySetInnerHTML={{__html: dataScript}}></script>
+        <script type="text/javascript" src="/bundle.js"></script>
       </div>
     );
   }

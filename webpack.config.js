@@ -1,14 +1,14 @@
 module.exports = {
-  entry: './public/main.js',
+  entry: __dirname + '/public/main.js',
   output: {
-    path: './public',
+    path: __dirname + '/public',
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
       loader: 'babel-loader!jsx-loader?harmony'
     }]
