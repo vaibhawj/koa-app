@@ -6,9 +6,9 @@
   "dependencies": {
     "@babel/core": "^7.0.0",
     "babel-loader": "^7.0.0",
-    "babel-preset-es2015": "^7.0.0",
-    "babel-preset-react": "^7.0.0",
-    "babel-register": "^7.0.0",
+    "babel-preset-es2015": "7.0.0-beta.3",
+    "babel-preset-react": "7.0.0-beta.3",
+    "babel-register": "7.0.0-beta.3",
     "jsx-loader": "^0.13.2",
     "koa": "^2.5.2",
     "koa-basic-auth": "^3.0.0",
