@@ -24,8 +24,10 @@
     "webpack-build": "^1.0.1"
   },
   "scripts": {
-    "build-client": "webpack -p --config webpack.config.js",
-    "start": "node server.js"
+    "build": "webpack -p --config webpack.config.js",
+    "build:dev": "webpack --config webpack.config.js",
+    "start": "yarn build && node server.js",
+    "start:dev": "yarn build:dev && node server.js"
   },
   "devDependencies": {
     "webpack-cli": "^3.1.0"
