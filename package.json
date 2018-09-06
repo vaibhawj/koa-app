@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "7.0.0-beta.3",
     "babel-preset-react": "7.0.0-beta.3",
@@ -21,15 +22,13 @@
     "react-dom": "^16.4.2",
     "unescape-html": "^1.1.0",
     "webpack": "^4.17.2",
-    "webpack-build": "^1.0.1"
+    "webpack-build": "^1.0.1",
+    "webpack-cli": "^3.1.0"
   },
   "scripts": {
     "build": "webpack -p --config webpack.config.js",
     "build:dev": "webpack --config webpack.config.js",
     "start": "yarn build && node server.js",
     "start:dev": "yarn build:dev && node server.js"
-  },
-  "devDependencies": {
-    "webpack-cli": "^3.1.0"
   }
 }
