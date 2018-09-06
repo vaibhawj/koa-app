@@ -2,16 +2,27 @@ const React = require('react');
 const axios = require('axios');
 
 class App extends React.Component {
-  componentDidMount(){
+  constructor() {
+    super();
+    this.state = {
+      pets: []
+    }
+  }
+  componentDidMount() {
     axios.get('/pets').then(res => {
-      console.log(res.data)
+      this.setState({
+        pets: res.data
+      })
     })
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
         Pets
+        {
+          this.state.pets.map(pet => <li>{pet.name}</li>)
+        }
       </div>
     )
   }

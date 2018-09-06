@@ -27,8 +27,8 @@ const db = {
 
 const pets = {
   list: (ctx) => {
-    const names = Object.keys(db);
-    ctx.body = 'pets: ' + names.join(', ');
+    const pets = Object.values(db);
+    ctx.body = pets;
   },
 
   show: (ctx, name) => {
